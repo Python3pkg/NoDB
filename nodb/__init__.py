@@ -9,7 +9,7 @@ import json
 import uuid
 
 try:
-    import cPickle as pickle
+    import pickle as pickle
 except Exception:
     import pickle
 
@@ -186,7 +186,7 @@ class NoDB(object):
 
         index_value = None
         if type(obj) is dict:
-            if obj.has_key(index):
+            if index in obj:
                 index_value = obj[index]
             else:
                 raise Exception("Dict object has no key: " + str(index))
